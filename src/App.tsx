@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import ModalOne from './components/ModalOne';
+import ModalTwo from './components/ModalTwo';
 
 function App() {
+ const [enableOne,setEnableOne] = useState(false)
+ const [enableTwo,setEnableTwo] = useState(false)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={_=>setEnableOne(true)}>Modal One</button>
+      <ModalOne enableOne={enableOne} setEnableOne={setEnableOne}/>      
+      <ModalTwo enable={enableTwo} setEnable={setEnableTwo}/>
+      <button onClick={_=>setEnableTwo(true)}>Modal Two</button>
     </div>
   );
 }

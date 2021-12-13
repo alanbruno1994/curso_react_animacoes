@@ -1,0 +1,51 @@
+.modal{
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: burlywood;    
+    left: 30%;
+   
+}
+.modalOpen
+{
+    animation: open 1s ease-out forwards;
+}
+
+.modalClose
+{
+    animation: close 1s ease-out forwards;
+}
+
+@keyframes open {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%); /*Fica fora da tela*/
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(90%); /*fica em baixo da tela*/
+    }
+    100% {  
+        opacity: 1;
+        transform: translateY(0);/*Fica no centro da tela*/
+    }
+    
+}
+
+@keyframes close {
+    0% {
+        opacity: 1;
+        transform: translateY(0); /*Fica no centro da tela*/
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(90%); /*fica em baixo da tela*/
+    }
+    100% {  
+        opacity: 0;
+        transform: translateY(-100%);/*Fica fora da tela*/
+    }
+    
+}
